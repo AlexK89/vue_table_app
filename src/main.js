@@ -27,7 +27,8 @@ new Vue({
 		// Filter items
 		filteredUsers() {
 			return this.orderedUsers.filter((user) => {
-				return user.name.toLowerCase().indexOf(this.search.toLowerCase()) !== -1 || user.sku.indexOf(this.search) !== -1
+				return 	user.name.toLowerCase().indexOf(this.search.toLowerCase()) !== -1 ||
+						user.sku.toLowerCase().indexOf(this.search.toLowerCase()) !== -1
 			})
 		}
 	},
