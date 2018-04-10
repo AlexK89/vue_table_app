@@ -1,7 +1,7 @@
 new Vue({
 	el: '#table-container',
 	data: {
-		sortKey: 'name',
+		sortKey: 'id',
 		reverse: false,
 		search: '',
 		columns: ['id', 'name', 'sku'],
