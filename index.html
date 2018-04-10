@@ -19,19 +19,10 @@
 		</tr>
 		</thead>
 		<tbody>
-		<template v-if="!search">
-			<tr v-for="item in orderedUsers">
-				<td class="box">{{ item.name }}</td>
-				<td class="box">{{ item.sku }}</td>
-			</tr>
-		</template>
-		<template v-else>
-			<tr v-for="item in filteredUsers">
-				<td class="box">{{ item.name }}</td>
-				<td class="box">{{ item.sku }}</td>
-			</tr>
-		</template>
-
+		<tr v-for="item in filteredUsers">
+			<td class="box">{{ item.name }}</td>
+			<td class="box">{{ item.sku }}</td>
+		</tr>
 		</tbody>
 	</table>
 </div>

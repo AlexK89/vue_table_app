@@ -22,7 +22,7 @@ new Vue({
 			return _.orderBy(this.dataArray, this.sortKey, 'desc')
 		},
 		filteredUsers: function () {
-			return this.dataArray.filter((user) => {
+			return this.orderedUsers.filter((user) => {
 				return user.name.toLowerCase().indexOf(this.search.toLowerCase()) !== -1 || user.sku.indexOf(this.search) !== -1
 			})
 		}
