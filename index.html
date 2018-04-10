@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style/styles.css">
+	<title>Vue Table App</title>
+</head>
+<body>
+
+<div id="table">
+	<input v-model="search" placeholder="Filter users by name or age">
+	<table>
+		<thead class="header">
+		<tr>
+			<th class="box" v-for="column in columns">
+				<a @click="sortBy(column)">{{ column }}</a>
+			</th>
+		</tr>
+		</thead>
+		<tbody>
+		<template v-if="!search">
+			<tr v-for="item in orderedUsers">
+				<td class="box">{{ item.name }}</td>
+				<td class="box">{{ item.sku }}</td>
+			</tr>
+		</template>
+		<template v-else>
+			<tr v-for="item in filteredUsers">
+				<td class="box">{{ item.name }}</td>
+				<td class="box">{{ item.sku }}</td>
+			</tr>
+		</template>
+
+		</tbody>
+	</table>
+</div>
+<script src="src/lodash.js"></script>
+<script src="src/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="src/main.js"></script>
+</body>
+</html>
