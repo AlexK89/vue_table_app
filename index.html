@@ -8,24 +8,25 @@
 </head>
 <body>
 
-<div id="table">
-	<input v-model="search" placeholder="Filter users by name or age">
-	<table>
-		<thead class="header">
-		<tr>
-			<th class="box" v-for="column in columns">
+<div id="table-container">
+	<input v-model="search" placeholder="Filter by Name or SKU" class="search">
+
+	<div class="table">
+		<div class="table__header">
+			<p class="table__header__column-name" v-for="column in columns">
 				<a @click="sortBy(column)">{{ column }}</a>
-			</th>
-		</tr>
-		</thead>
-		<tbody>
-		<tr v-for="item in filteredUsers">
-			<td class="box">{{ item.name }}</td>
-			<td class="box">{{ item.sku }}</td>
-		</tr>
-		</tbody>
-	</table>
+			</p>
+		</div>
+		<div class="table__body">
+			<div class="table__body__row" v-for="item in filteredUsers">
+				<p class="table__body__row__id">{{ item.id }}</p>
+				<p class="table__body__row__name">{{ item.name }}</p>
+				<p class="table__body__row__sku">{{ item.sku }}</p>
+			</div>
+		</div>
+	</div>
 </div>
+
 <script src="src/lodash.js"></script>
 <script src="src/vue.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

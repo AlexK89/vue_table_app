@@ -1,10 +1,89 @@
-#table {
-	width: 90%;
-	max-width: 600px;
+* {
+	box-sizing: border-box;
 }
 
-.box {
-	width: 200px;
-	border: 1px solid black;
+p {
+	margin: 0;
+}
+#table-container {
+	width: 90%;
+	max-width: 600px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+
+/*=========================*/
+/*Table Input*/
+/*=========================*/
+.search {
+	width: 100%;
+	border: none;
+	border-bottom: 2px solid #20bcd3;
+	margin: 1.5em 0;
+	padding: 1em 0;
+	outline: none;
+}
+
+.search:focus {
+	border-bottom: 2px solid #177d8d;
+}
+
+.table {
+	width: 100%;
+}
+
+/*=========================*/
+/*Table Header*/
+/*=========================*/
+.table__header {
+	display: flex;
+	background-color: #20bcd3;
+	color: #ffffff;
+}
+
+.table__header__column-name {
+	width: calc(50% - 25px);
+	text-transform: capitalize;
+	letter-spacing: 0.1em;
+}
+
+.table__header__column-name:first-child {
+	width: 50px;
+}
+
+.table__header__column-name a {
+	display: block;
+	height: 100%;
 	padding: 10px;
+	cursor: pointer;
+	transition: .3s;
+}
+
+.table__header__column-name a:hover {
+	background-color: #177d8d;
+}
+
+/*=========================*/
+/*Table Body*/
+/*=========================*/
+.table__body {
+
+}
+
+.table__body__row {
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid #e1e1e1;
+}
+
+.table__body__row__id {
+	padding: 10px;
+	width: 50px;
+}
+
+.table__body__row__name,
+.table__body__row__sku {
+	padding: 10px;
+	width: calc(50% - 25px);
 }
